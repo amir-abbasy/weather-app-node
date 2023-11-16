@@ -7,14 +7,14 @@ const weatherController = {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${req.query.q}&appid=${AppConfig.openweathermap_app_id}`,
+      url: `http://api.openweathermap.org/data/2.5/weather?q=${req.query.city}&appid=${AppConfig.openweathermap_app_id}`,
       headers: {},
     };
 
     axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        // console.log(JSON.stringify(response.data));
         Helper.handleJsonResponse(res, response.data);
       })
       .catch((error) => {
@@ -34,7 +34,7 @@ const weatherController = {
     axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        // console.log(JSON.stringify(response.data));
         Helper.handleJsonResponse(res, response.data);
       })
       .catch((error) => {

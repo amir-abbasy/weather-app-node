@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const router = require("./routes");
+const Helper = require("./helper");
 const app = express();
 // instance const app = express().
 
@@ -16,17 +17,10 @@ app.use(
   })
 );
 
+app.use(Helper.apiKeyMiddleware);
+
 // set route in middleware
 app.use(router);
-
-// allow cors
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173",
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true,
-//   })
-// );
 
 // db connection
 
