@@ -27,7 +27,7 @@ const weatherController = {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `https://api.openweathermap.org/data/2.5/onecall?lat=${req.query.lat}&lon=${req.query.lon}&exclude=current,minutely,hourly&appid=${AppConfig.openweathermap_app_id}`,
+      url: `https://api.openweathermap.org/data/2.5/forecast?q=${req.query.city}&appid=${AppConfig.openweathermap_app_id}`,
       headers: {},
     };
 
